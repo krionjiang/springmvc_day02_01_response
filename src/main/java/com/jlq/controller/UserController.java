@@ -89,6 +89,23 @@ public class UserController {
         return mv;
     }
 
+
+    /**
+     * 使用关键字的方式进行转发或者重定向
+     * @return
+     */
+    @RequestMapping("/testForWardOrRedirect")
+    public String testForWardOrRedirect(){
+        System.out.println("testForWardOrRedirect执行...");
+        //请求的转发
+//        return "forward:/WEB-INF/pages/success.jsp";
+
+        //重定向
+        return "redirect:/index.jsp";
+
+    }
+
+
 }
 
 

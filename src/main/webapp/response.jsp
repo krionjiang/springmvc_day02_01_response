@@ -17,5 +17,7 @@
 
     <a href="user/testModelAndView">testModelAndView</a><br/>
 
+    <a href="user/testForWardOrRedirect">testForWardOrRedirect</a><br/>
+
 </body>
 </html>
