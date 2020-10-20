@@ -4,6 +4,7 @@ import com.jlq.domain.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -60,6 +61,32 @@ public class UserController {
         //直接会进行响应
         response.getWriter().print("你好");
         return;
+    }
+
+    /**
+     * 返回 ModelAndView
+     * @return ModelAndView
+     */
+    @RequestMapping("/testModelAndView")
+    public ModelAndView testModelAndView(){
+        System.out.println("testModelAndView执行...");
+
+        //创建一个ModelAndView对象
+        ModelAndView mv = new ModelAndView();
+
+        //模拟从数据库中查询出User对象
+        User user = new User();
+        user.setUsername("桂桂");
+        user.setPassword("890");
+        user.setAge(12);
+
+        //把user对象存储到mv对象中，底层也会把user对象存到request对象
+        mv.addObject("user",user);
+
+        //跳转到哪个页面
+        mv.setViewName("success");
+
+        return mv;
     }
 
 }

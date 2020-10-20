@@ -15,5 +15,7 @@
 
     <a href="user/testVoid">testVoid</a><br/>
 
+    <a href="user/testModelAndView">testModelAndView</a><br/>
+
 </body>
 </html>
