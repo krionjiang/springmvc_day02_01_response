@@ -1,6 +1,8 @@
 package com.jlq.controller;
 
+import com.jlq.domain.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -12,8 +14,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UserController {
 
     @RequestMapping("/testString")
-    public String testString(){
+    public String testString(Model model){
         System.out.println("testString执行...");
+        //模拟从数据库中查询出User对象
+
+        User user = new User();
+        user.setUsername("菜菜");
+        user.setPassword("123");
+        user.setAge(20);
+        //model对象
+        model.addAttribute("user",user);
         return "success";
     }
 
